@@ -1,0 +1,157 @@
+.project-visual {
+  --stagger: inherit;
+  position: relative;
+  width: 100%;
+  height: clamp(280px, 48vw, 480px);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  overflow: hidden;
+  background: var(--color-visual);
+  transition: background-color 0.3s var(--ease-apple);
+}
+
+/* Curved arch — Apple promo tile signature shape */
+.project-visual__arch {
+  position: absolute;
+  bottom: -1px;
+  left: 50%;
+  transform: translateX(-50%) scaleY(0.92);
+  transform-origin: bottom center;
+  width: 140%;
+  height: 85%;
+  border-radius: 50% 50% 0 0 / 18% 18% 0 0;
+  pointer-events: none;
+  opacity: 0;
+  transition:
+    background 0.3s var(--ease-apple),
+    opacity 0.8s var(--ease-apple),
+    transform 0.9s var(--ease-apple);
+  transition-delay: calc(var(--stagger, 0ms) + 120ms);
+}
+
+.project-visual__arch--visible {
+  opacity: 1;
+  transform: translateX(-50%) scaleY(1);
+}
+
+.project-visual__image-wrap {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transform: translateY(20px) scale(0.97);
+  transition:
+    opacity 0.8s var(--ease-apple),
+    transform 0.85s var(--ease-apple);
+  transition-delay: calc(var(--stagger, 0ms) + 180ms);
+}
+
+.project-visual__image-wrap--visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.project-visual__arch--arch-dark {
+  background: linear-gradient(180deg, #2c2c2e 0%, #1d1d1f 40%, #000 100%);
+}
+
+.project-visual__arch--arch-blue {
+  background: linear-gradient(180deg, #1e3a5f 0%, #0f2744 50%, #000 100%);
+}
+
+.project-visual__arch--arch-warm {
+  background: linear-gradient(180deg, #3d2a1a 0%, #2a1a10 50%, #000 100%);
+}
+
+.project-visual__arch--arch-green {
+  background: linear-gradient(180deg, #1a3d2e 0%, #0f2a1f 50%, #000 100%);
+}
+
+[data-theme='light'] .project-visual__arch--arch-dark {
+  background: linear-gradient(180deg, #e8e8ed 0%, #f5f5f7 50%, #fff 100%);
+}
+
+[data-theme='light'] .project-visual__arch--arch-blue {
+  background: linear-gradient(180deg, #d6e8f7 0%, #e8f2fa 50%, #fff 100%);
+}
+
+[data-theme='light'] .project-visual__arch--arch-warm {
+  background: linear-gradient(180deg, #f5e6d8 0%, #faf3ed 50%, #fff 100%);
+}
+
+[data-theme='light'] .project-visual__arch--arch-green {
+  background: linear-gradient(180deg, #d8f0e6 0%, #edf8f3 50%, #fff 100%);
+}
+
+.project-visual__glow {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 40%;
+  background: radial-gradient(ellipse, rgba(255, 255, 255, 0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+[data-theme='light'] .project-visual__glow {
+  background: radial-gradient(ellipse, rgba(0, 0, 0, 0.04) 0%, transparent 70%);
+}
+
+.project-visual__image {
+  position: relative;
+  z-index: 1;
+  width: min(92%, 720px);
+  height: auto;
+  max-height: 88%;
+  object-fit: contain;
+  object-position: bottom center;
+  filter: drop-shadow(0 24px 48px rgba(0, 0, 0, 0.35));
+  transform: translateY(8%);
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+[data-theme='light'] .project-visual__image {
+  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.12));
+}
+
+/* Layout variants — Apple alternates composition */
+.project-visual--center .project-visual__image {
+  transform: translateY(6%);
+}
+
+.project-visual--wide .project-visual__image {
+  width: min(98%, 860px);
+  transform: translateY(4%);
+}
+
+.project-visual--stack .project-visual__image {
+  width: min(70%, 520px);
+  transform: translateY(2%);
+}
+
+.project-visual--device .project-visual__image {
+  width: min(55%, 400px);
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .project-visual {
+    height: clamp(240px, 55vw, 360px);
+  }
+
+  .project-visual__image {
+    width: min(95%, 520px);
+    transform: translateY(4%);
+  }
+
+  .project-visual--device .project-visual__image {
+    width: min(65%, 320px);
+  }
+}

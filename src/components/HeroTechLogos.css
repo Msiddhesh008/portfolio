@@ -1,0 +1,181 @@
+.hero-tech {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.hero-tech__defs {
+  position: absolute;
+}
+
+.hero-tech__item {
+  position: absolute;
+  width: var(--tech-size);
+  height: var(--tech-size);
+  rotate: var(--tech-rotate);
+  opacity: 0.82;
+  animation: heroTechFloat 8s ease-in-out infinite;
+  animation-delay: var(--tech-delay);
+}
+
+.hero-tech__icon {
+  width: 100%;
+  height: 100%;
+  display: block;
+  filter: drop-shadow(0 2px 8px rgba(41, 151, 255, 0.15));
+}
+
+[data-theme='light'] .hero-tech__icon {
+  filter: drop-shadow(0 2px 6px rgba(0, 102, 204, 0.12));
+  opacity: 0.9;
+}
+
+[data-theme='light'] .hero-tech__item {
+  opacity: 0.75;
+}
+
+/* Decorative gradient shapes — edge bands only */
+.hero-tech__shape {
+  position: absolute;
+  pointer-events: none;
+  rotate: var(--r, 0deg);
+}
+
+.hero-tech__shape--star {
+  width: 16px;
+  height: 16px;
+  background: linear-gradient(135deg, #2997ff, #30d158);
+  clip-path: polygon(
+    50% 0%,
+    61% 35%,
+    98% 35%,
+    68% 57%,
+    79% 91%,
+    50% 70%,
+    21% 91%,
+    32% 57%,
+    2% 35%,
+    39% 35%
+  );
+  opacity: 0.5;
+  animation: heroTechFloat 9s ease-in-out infinite;
+}
+
+.hero-tech__shape--squiggle {
+  width: 30px;
+  height: 12px;
+  border: 2px solid transparent;
+  border-radius: 50%;
+  border-top-color: #5ac8fa;
+  border-right-color: #30d158;
+  border-bottom-color: #bf5af2;
+  opacity: 0.45;
+  animation: heroTechFloat 8s ease-in-out infinite reverse;
+}
+
+.hero-tech__shape--dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #64d2ff, #5e5ce6);
+  opacity: 0.55;
+}
+
+@keyframes heroTechFloat {
+  0%,
+  100% {
+    translate: var(--tech-tx, 0) var(--tech-ty, 0);
+  }
+  50% {
+    translate: var(--tech-tx, 0) calc(var(--tech-ty, 0px) - 4px);
+  }
+}
+
+@media (max-width: 1024px) {
+  .hero-tech__item {
+    opacity: 0.68;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-tech__item {
+    --tech-size: 24px !important;
+    opacity: 0.52;
+  }
+
+  /* Tighter perimeter — all logos visible, none in center */
+  .hero-tech__item--nextjs {
+    top: 10% !important;
+    left: 11% !important;
+    right: auto !important;
+  }
+
+  .hero-tech__item--git {
+    top: 10% !important;
+    right: 11% !important;
+    left: auto !important;
+  }
+
+  .hero-tech__item--reactnative {
+    top: 36% !important;
+    left: 2% !important;
+  }
+
+  .hero-tech__item--postgresql {
+    top: 54% !important;
+    left: 2% !important;
+  }
+
+  .hero-tech__item--expo {
+    top: 36% !important;
+    right: 2% !important;
+    left: auto !important;
+  }
+
+  .hero-tech__item--node {
+    top: 54% !important;
+    right: 2% !important;
+    left: auto !important;
+  }
+
+  .hero-tech__item--css {
+    bottom: 2% !important;
+    left: 50% !important;
+    right: auto !important;
+    translate: -50% 0 !important;
+  }
+
+  .hero-tech__shape--star,
+  .hero-tech__shape--squiggle {
+    display: none;
+  }
+
+  .hero-tech__shape--dot {
+    opacity: 0.4;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-tech__item {
+    --tech-size: 22px !important;
+    opacity: 0.48;
+  }
+
+  .hero-tech__item--nextjs {
+    left: 9% !important;
+  }
+
+  .hero-tech__item--git {
+    right: 9% !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-tech__item,
+  .hero-tech__shape--star,
+  .hero-tech__shape--squiggle {
+    animation: none;
+  }
+}

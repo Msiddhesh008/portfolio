@@ -1,0 +1,125 @@
+.projects {
+  padding: 0.75rem 1rem 0;
+}
+
+.projects__inner {
+  max-width: var(--max-width-wide);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.project-tile {
+  --stagger: 0ms;
+  background: var(--color-surface);
+  border-radius: 18px;
+  overflow: hidden;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(28px) scale(0.99);
+  transition:
+    opacity 0.75s var(--ease-apple),
+    transform 0.75s var(--ease-apple),
+    background-color 0.3s var(--ease-apple);
+  transition-delay: var(--stagger);
+}
+
+.project-tile--visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.project-tile__content,
+.project-tile__details {
+  opacity: 0;
+  transform: translateY(10px);
+  transition:
+    opacity 0.65s var(--ease-apple),
+    transform 0.65s var(--ease-apple);
+}
+
+.project-tile--visible .project-tile__content {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: calc(var(--stagger) + 100ms);
+}
+
+.project-tile--visible .project-tile__details {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: calc(var(--stagger) + 280ms);
+}
+
+.project-tile__content {
+  padding: 3.5rem 1.5rem 0;
+}
+
+.project-tile__title {
+  font-size: var(--text-headline);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.08;
+  margin-bottom: 0.5rem;
+}
+
+.project-tile__subtitle {
+  font-size: var(--text-subhead);
+  color: var(--color-text-secondary);
+  font-weight: 400;
+  line-height: 1.381;
+  max-width: 28rem;
+  margin: 0 auto 1rem;
+}
+
+.project-tile__links {
+  margin-bottom: 2rem;
+}
+
+.project-tile__link {
+  font-size: var(--text-subhead);
+  color: var(--color-link);
+  text-decoration: none;
+  display: inline-block;
+}
+
+.project-tile__link:hover {
+  text-decoration: underline;
+  color: var(--color-link-hover);
+}
+
+.project-tile__details {
+  padding: 2rem 2.5rem 2.5rem;
+  text-align: left;
+  max-width: 36rem;
+  margin: 0 auto;
+}
+
+.project-tile__details p {
+  font-size: var(--text-body);
+  color: var(--color-text-secondary);
+  line-height: 1.47059;
+  margin-bottom: 1rem;
+}
+
+.project-tile__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+}
+
+.project-tile__tags li {
+  font-size: var(--text-caption);
+  color: var(--color-text-tertiary);
+}
+
+@media (max-width: 768px) {
+  .project-tile__content {
+    padding-top: 2.5rem;
+  }
+
+  .project-tile__details {
+    padding: 1.5rem 1.25rem 2rem;
+  }
+}

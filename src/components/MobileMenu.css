@@ -1,0 +1,112 @@
+.nav-mobile {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .nav-mobile {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 9990;
+    pointer-events: none;
+    visibility: hidden;
+  }
+
+  .nav-mobile--open {
+    pointer-events: auto;
+    visibility: visible;
+  }
+
+  /* Full-screen frosted glass — portaled to body, no parent transform */
+  .nav-mobile__blur {
+    position: absolute;
+    inset: 0;
+    background-color: var(--color-nav-blur-bg);
+    -webkit-backdrop-filter: blur(40px) saturate(180%);
+    backdrop-filter: blur(40px) saturate(180%);
+    opacity: 0;
+    transition: opacity 0.35s var(--ease-apple);
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+
+  .nav-mobile--open .nav-mobile__blur {
+    opacity: 1;
+  }
+
+  @supports not (backdrop-filter: blur(1px)) {
+    .nav-mobile__blur {
+      background-color: var(--color-nav-fallback);
+    }
+  }
+
+  .nav-mobile__panel {
+    position: absolute;
+    top: var(--nav-height);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    padding: 2.5rem 2rem;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .nav-mobile__links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+  }
+
+  .nav-mobile__links a,
+  .nav-mobile__theme {
+    font-size: 1.75rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: var(--color-text);
+    text-decoration: none;
+    background: none;
+    border: none;
+    padding: 0;
+    font-family: inherit;
+    cursor: pointer;
+    text-align: left;
+  }
+
+  .nav-mobile__links a:hover,
+  .nav-mobile__theme:hover {
+    opacity: 0.75;
+  }
+
+  .nav-mobile__links > li {
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity 0.3s var(--ease-apple), transform 0.3s var(--ease-apple);
+  }
+
+  .nav-mobile--open .nav-mobile__links > li {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .nav-mobile--open .nav-mobile__links > li:nth-child(1) {
+    transition-delay: 0.05s;
+  }
+
+  .nav-mobile--open .nav-mobile__links > li:nth-child(2) {
+    transition-delay: 0.09s;
+  }
+
+  .nav-mobile--open .nav-mobile__links > li:nth-child(3) {
+    transition-delay: 0.13s;
+  }
+
+  .nav-mobile--open .nav-mobile__links > li:nth-child(4) {
+    transition-delay: 0.17s;
+  }
+
+  .nav-mobile--open .nav-mobile__links > li:nth-child(5) {
+    transition-delay: 0.21s;
+  }
+}
