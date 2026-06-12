@@ -1,3 +1,4 @@
+import { assetUrl } from '../utils/assetUrl'
 import './ProjectVisual.css'
 
 const ARCH_VARIANTS = ['arch-dark', 'arch-blue', 'arch-warm', 'arch-green']
@@ -15,7 +16,7 @@ export default function ProjectVisual({ project, index, visible = false }) {
       <div className="project-visual__glow" aria-hidden="true" />
       <div className={`project-visual__image-wrap ${visible ? 'project-visual__image-wrap--visible' : ''}`}>
         <img
-          src={project.image}
+          src={assetUrl(project.image)}
           alt=""
           className="project-visual__image"
           loading="lazy"
