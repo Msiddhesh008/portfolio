@@ -1,0 +1,26 @@
+.nav-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--nav-height);
+  z-index: 9995;
+  pointer-events: none;
+  opacity: 0;
+  background-color: var(--color-nav-blur-bg);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  transition: opacity 0.4s var(--ease-apple);
+}
+
+.nav-backdrop--visible {
+  opacity: 1;
+}
+
+@supports not (backdrop-filter: blur(1px)) {
+  .nav-backdrop {
+    background-color: var(--color-nav-fallback);
+  }
+}

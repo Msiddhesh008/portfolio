@@ -5,16 +5,12 @@
   right: 0;
   z-index: 10000;
   height: var(--nav-height);
-  transition: background 0.4s var(--ease-apple), backdrop-filter 0.4s var(--ease-apple);
-}
-
-.nav--scrolled {
-  background: var(--color-nav-bg);
-  backdrop-filter: saturate(180%) blur(20px);
-  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  background: transparent;
 }
 
 .nav__inner {
+  position: relative;
+  z-index: 1;
   max-width: var(--max-width-wide);
   margin: 0 auto;
   padding: 0 max(22px, env(safe-area-inset-right)) 0 max(22px, env(safe-area-inset-left));

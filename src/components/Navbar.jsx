@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { useTheme } from '../context/ThemeContext'
 import { nav, navLinks } from '../data/portfolio'
 import MobileMenu from './MobileMenu'
+import NavBackdrop from './NavBackdrop'
 import './Navbar.css'
 
 /** Apple-style frosted glass navigation bar. */
@@ -13,6 +14,7 @@ export default function Navbar() {
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20)
+    onScroll()
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
@@ -30,7 +32,9 @@ export default function Navbar() {
 
   return (
     <>
-      <header className={`nav ${scrolled || menuOpen ? 'nav--scrolled' : ''}`}>
+      <NavBackdrop visible={scrolled || menuOpen} />
+
+      <header className="nav">
         <nav className="nav__inner" aria-label="Main navigation">
           <Link to="/" className="nav__logo" onClick={closeMenu}>
             {nav.logo}
