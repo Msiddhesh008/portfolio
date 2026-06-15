@@ -53,7 +53,7 @@ export const contact = {
 }
 
 export const nav = {
-  logo: 'Portfolio',
+  logo: 'Siddhesh More',
   cta: 'Get in touch',
   ctaHref: '/#contact',
 }
