@@ -36,7 +36,7 @@ export const hero = {
 export const about = {
   headline: ['Building digital products', 'with intention.'],
   stats: [
-    { value: '5+', label: 'Years experience' },
+    { value: '7+', label: 'Years experience' },
     { value: '40+', label: 'Projects delivered' },
     { value: '12', label: 'Happy clients' },
   ],
@@ -61,7 +61,10 @@ export const nav = {
 export const navLinks = [
   { label: 'Work', href: '/#work' },
   { label: 'About', href: '/#about' },
+  { label: 'Experience', href: '/#experience' },
   { label: 'Skills', href: '/#skills' },
+  { label: 'Workflow', href: '/workflow' },
+  { label: 'Resume', href: '/resume' },
   { label: 'Contact', href: '/#contact' },
 ]
 
@@ -72,6 +75,486 @@ export const projectsSection = {
 export const projectDetail = {
   ctaText: 'Interested in working together?',
   ctaLink: 'Get in touch',
+}
+
+/** Home experience section — fill in experience[] below. */
+export const experienceSection = {
+  headline: 'Experience.',
+  subhead: 'Where I have built and shipped products.',
+  emptyMessage: 'Experience details coming soon.',
+}
+
+export const experience = [
+  {
+    company: 'Zing HR',
+    role: 'Full Stack Developer',
+    period: '2024 — Present',
+    location: 'Mumbai, India',
+    summary:
+      'Leading development of an end-to-end HR platform with React web dashboard and React Native mobile apps.',
+    highlights: [
+      'Architected shared Node.js API serving web and mobile clients',
+      'Delivered attendance, payroll, and performance review modules',
+      'Improved employee self-service adoption across pilot organizations',
+    ],
+    stack: ['React', 'React Native', 'TypeScript', 'Node.js', 'PostgreSQL', 'AWS'],
+    projects: [
+      {
+        title: 'Zing HR Platform',
+        description:
+          'Unified HRMS with admin dashboard, employee self-service, and hybrid mobile app for iOS and Android.',
+      },
+    ],
+  },
+  {
+    company: 'LexFlow Technologies',
+    role: 'Frontend Lead',
+    period: '2022 — 2024',
+    location: 'Mumbai, India',
+    summary:
+      'Led frontend for a legal-tech SaaS startup building case management tools for law firms.',
+    highlights: [
+      'Owned React SPA architecture, design system, and document workflow UI',
+      'Built full-text search and calendar integrations for court deadlines',
+      'Mentored two junior developers and established code review practices',
+    ],
+    stack: ['React', 'TypeScript', 'Next.js', 'PostgreSQL', 'GraphQL', 'AWS'],
+    projects: [
+      {
+        title: 'Autolex',
+        description:
+          'Case management platform — client records, document versioning, hearings, and billing in one workspace.',
+      },
+    ],
+  },
+  {
+    company: 'DigitalCraft Solutions',
+    role: 'React Native Developer',
+    period: '2019 — 2022',
+    location: 'Mumbai, India',
+    summary:
+      'Built cross-platform mobile apps and supporting Node.js APIs for startup and agency clients.',
+    highlights: [
+      'Shipped React Native apps to both app stores with Expo and native modules',
+      'Integrated push notifications, deep linking, and offline-first caching',
+      'Collaborated with design on pixel-accurate UI across iOS and Android',
+    ],
+    stack: ['React Native', 'Expo', 'Node.js', 'MongoDB', 'Firebase'],
+    projects: [
+      {
+        title: 'Regroup',
+        description:
+          'Social fitness app — activity feeds, challenges, leaderboards, and training logs for athletes.',
+      },
+      {
+        title: 'Orbit',
+        description:
+          'Remote collaboration tool with live presence, audio huddles, and shared boards for distributed teams.',
+      },
+    ],
+  },
+]
+
+/** Workflow page — edit steps[] per tech. */
+export const workflowSection = {
+  headline: 'How I work.',
+  subhead: 'End-to-end pipelines and best practices across the stack.',
+}
+
+export const workflows = [
+  {
+    slug: 'react-native',
+    title: 'React Native',
+    theme: 'rn',
+    intro: 'From project bootstrap to App Store — a repeatable hybrid mobile pipeline.',
+    steps: [
+      {
+        title: 'Project setup',
+        description: 'Choose Expo or bare workflow, scaffold folders, configure env and EAS.',
+        substeps: [],
+      },
+      {
+        title: 'Component architecture',
+        description: 'Atomic design — screens, containers, shared UI, and hooks separated cleanly.',
+        substeps: [],
+      },
+      {
+        title: 'State and navigation',
+        description: 'Predictable state with React Navigation stacks, tabs, and deep links.',
+        substeps: [
+          { title: 'Screen structure', description: 'Feature-based routes with typed params.' },
+          { title: 'Shared components', description: 'Reusable UI primitives with theme tokens.' },
+          { title: 'Global state', description: 'Context or Zustand for cross-screen data.' },
+        ],
+      },
+      {
+        title: 'Native APIs and modules',
+        description: 'Permissions, camera, location, push — bridge only when JS is not enough.',
+        substeps: [],
+      },
+      {
+        title: 'Testing and debugging',
+        description: 'Jest unit tests, Detox or Maestro E2E, Flipper and Reactotron in dev.',
+        substeps: [],
+      },
+      {
+        title: 'Build and store release',
+        description: 'EAS builds, OTA updates, store metadata, and staged rollouts.',
+        substeps: [],
+      },
+    ],
+  },
+  {
+    slug: 'nextjs',
+    title: 'Next.js',
+    theme: 'next',
+    intro: 'App Router-first web delivery — server components, caching, and production deploy.',
+    steps: [
+      {
+        title: 'App Router structure',
+        description: 'Route groups, layouts, loading and error boundaries per segment.',
+        substeps: [],
+      },
+      {
+        title: 'Data fetching strategy',
+        description: 'Pick the right render mode per page — never one-size-fits-all.',
+        substeps: [
+          { title: 'SSR', description: 'Dynamic pages with fresh data on every request.' },
+          { title: 'SSG', description: 'Static generation for marketing and docs.' },
+          { title: 'ISR', description: 'Revalidate on interval for semi-dynamic content.' },
+        ],
+      },
+      {
+        title: 'Server layer',
+        description: 'Route handlers, server actions, and typed API contracts with the client.',
+        substeps: [],
+      },
+      {
+        title: 'Auth and middleware',
+        description: 'Session checks at the edge, protected routes, and role-based access.',
+        substeps: [],
+      },
+      {
+        title: 'Performance and SEO',
+        description: 'Image optimization, metadata API, Core Web Vitals, and sitemap generation.',
+        substeps: [],
+      },
+      {
+        title: 'Deploy and monitor',
+        description: 'Vercel preview deploys, env secrets, and runtime error tracking.',
+        substeps: [],
+      },
+    ],
+  },
+  {
+    slug: 'nodejs',
+    title: 'Node.js',
+    theme: 'node',
+    intro: 'APIs that scale — layered backend design from route to database.',
+    steps: [
+      {
+        title: 'API design',
+        description: 'REST or GraphQL contracts first — versioning, pagination, and error shapes.',
+        substeps: [],
+      },
+      {
+        title: 'Layered architecture',
+        description: 'Thin routes, business logic in services, data access in repositories.',
+        substeps: [
+          { title: 'Routes', description: 'Validate input, map HTTP to service calls.' },
+          { title: 'Services', description: 'Business rules, orchestration, transactions.' },
+          { title: 'Repositories', description: 'Database queries isolated from domain logic.' },
+        ],
+      },
+      {
+        title: 'Database and migrations',
+        description: 'PostgreSQL schemas, migrations, indexes, and connection pooling.',
+        substeps: [],
+      },
+      {
+        title: 'Auth and validation',
+        description: 'JWT or session auth, Zod schemas, rate limiting on sensitive endpoints.',
+        substeps: [],
+      },
+      {
+        title: 'Logging and errors',
+        description: 'Structured logs, centralized error handling, and health check endpoints.',
+        substeps: [],
+      },
+      {
+        title: 'Docker and CI/CD',
+        description: 'Containerized deploys, GitHub Actions pipelines, and zero-downtime releases.',
+        substeps: [],
+      },
+    ],
+  },
+  {
+    slug: 'react',
+    title: 'React JS',
+    theme: 'react',
+    intro: 'Component-driven UIs — from scaffold to production with predictable patterns.',
+    steps: [
+      {
+        title: 'Project scaffold',
+        description: 'Vite or CRA, TypeScript, ESLint, and folder structure by feature.',
+        substeps: [],
+      },
+      {
+        title: 'Component design',
+        description: 'Presentational vs container components, composition over inheritance.',
+        substeps: [],
+      },
+      {
+        title: 'State management',
+        description: 'Local state first, then Context, Zustand, or Redux when complexity grows.',
+        substeps: [
+          { title: 'Server state', description: 'React Query or SWR for API cache and sync.' },
+          { title: 'UI state', description: 'useState and useReducer for form and view state.' },
+          { title: 'Global state', description: 'Shared stores only for truly cross-cutting data.' },
+        ],
+      },
+      {
+        title: 'Routing and code splitting',
+        description: 'React Router lazy routes, suspense boundaries, and protected pages.',
+        substeps: [],
+      },
+      {
+        title: 'Testing',
+        description: 'React Testing Library for units, MSW for API mocks, Playwright for E2E.',
+        substeps: [],
+      },
+      {
+        title: 'Build and deploy',
+        description: 'Tree-shaking, env configs, and static or CDN deploy pipelines.',
+        substeps: [],
+      },
+    ],
+  },
+  {
+    slug: 'angular',
+    title: 'Angular',
+    theme: 'angular',
+    intro: 'Enterprise-grade SPAs — modules, dependency injection, and typed templates.',
+    steps: [
+      {
+        title: 'Workspace setup',
+        description: 'Angular CLI, strict mode, path aliases, and environment files.',
+        substeps: [],
+      },
+      {
+        title: 'Module architecture',
+        description: 'Feature modules, shared module, and lazy-loaded routes.',
+        substeps: [
+          { title: 'Core module', description: 'Singleton services, guards, and interceptors.' },
+          { title: 'Shared module', description: 'Reusable components, pipes, and directives.' },
+          { title: 'Feature modules', description: 'Domain-scoped pages and state per area.' },
+        ],
+      },
+      {
+        title: 'Services and DI',
+        description: 'Injectable services, HttpClient, and typed API layers.',
+        substeps: [],
+      },
+      {
+        title: 'Forms and validation',
+        description: 'Reactive forms, custom validators, and accessible error messaging.',
+        substeps: [],
+      },
+      {
+        title: 'Testing',
+        description: 'Jasmine/Karma or Jest unit tests, TestBed, and Protractor/Cypress E2E.',
+        substeps: [],
+      },
+      {
+        title: 'Production build',
+        description: 'AOT compilation, budgets, and deploy to static hosting or SSR.',
+        substeps: [],
+      },
+    ],
+  },
+  {
+    slug: 'html',
+    title: 'HTML',
+    theme: 'html',
+    intro: 'Semantic markup first — accessible, SEO-friendly foundations for every interface.',
+    steps: [
+      {
+        title: 'Semantic structure',
+        description: 'Correct landmarks — header, nav, main, article, section, footer.',
+        substeps: [],
+      },
+      {
+        title: 'Accessibility',
+        description: 'ARIA only when needed, labels, focus order, and keyboard navigation.',
+        substeps: [
+          { title: 'Forms', description: 'label for, fieldset, legend, and error associations.' },
+          { title: 'Media', description: 'alt text, captions, and transcripts where required.' },
+          { title: 'Contrast', description: 'WCAG AA color contrast and visible focus states.' },
+        ],
+      },
+      {
+        title: 'SEO fundamentals',
+        description: 'Title, meta description, canonical URLs, and structured data.',
+        substeps: [],
+      },
+      {
+        title: 'Performance markup',
+        description: 'Lazy loading images, defer scripts, and minimize DOM depth.',
+        substeps: [],
+      },
+      {
+        title: 'Progressive enhancement',
+        description: 'Core content works without JS; enhance with CSS and scripts.',
+        substeps: [],
+      },
+      {
+        title: 'Validation and standards',
+        description: 'W3C validation, cross-browser checks, and HTML5 best practices.',
+        substeps: [],
+      },
+    ],
+  },
+]
+
+/** Resume page — edit resume object below; replace public/resume.pdf with your file. */
+export const resumeSection = {
+  downloadLabel: 'Download PDF',
+  labels: {
+    summary: 'Summary',
+    experience: 'Experience',
+    projects: 'Key Projects',
+    skills: 'Skills',
+    education: 'Education',
+  },
+  emptyExperience: 'Experience details coming soon.',
+}
+
+export const resume = {
+  summary:
+    'Full stack and mobile developer with 7+ years building production web apps, React Native hybrid products, and Node.js backends. Experienced across HR tech, legal SaaS, and consumer mobile — from architecture and UI to App Store release.',
+  experience: [
+    {
+      company: 'Zing HR',
+      role: 'Full Stack Developer',
+      period: '2024 — Present',
+      location: 'Mumbai, India',
+      summary:
+        'End-to-end HR platform — React web dashboard and React Native mobile app for attendance, payroll, and performance reviews.',
+      highlights: [
+        'Built modular web app and hybrid mobile companion with shared Node.js API',
+        'Shipped role-based access, real-time notifications, and admin console',
+        'Reduced onboarding time and improved employee self-service adoption',
+      ],
+      stack: ['React', 'React Native', 'TypeScript', 'Node.js', 'PostgreSQL', 'AWS'],
+      projects: [
+        {
+          title: 'Zing HR Platform',
+          description:
+            'Enterprise HRMS with employee directory, attendance tracking, payroll, and performance review cycles.',
+        },
+      ],
+    },
+    {
+      company: 'LexFlow Technologies',
+      role: 'Frontend Lead',
+      period: '2022 — 2024',
+      location: 'Mumbai, India',
+      summary:
+        'Legal-tech startup delivering case management software for mid-size law firms across India.',
+      highlights: [
+        'Led React frontend for document workflows, matter timelines, and billing modules',
+        'Implemented PostgreSQL full-text search across clients, cases, and filings',
+        'Cut document retrieval time by 55% through redesigned case-centric navigation',
+      ],
+      stack: ['React', 'TypeScript', 'Next.js', 'PostgreSQL', 'GraphQL', 'AWS'],
+      projects: [
+        {
+          title: 'Autolex',
+          description:
+            'SaaS case management — unified client profiles, court calendars, time tracking, and invoice drafts.',
+        },
+      ],
+    },
+    {
+      company: 'DigitalCraft Solutions',
+      role: 'React Native Developer',
+      period: '2019 — 2022',
+      location: 'Mumbai, India',
+      summary:
+        'Agency-style delivery of hybrid mobile apps and Node.js APIs for fitness, collaboration, and startup clients.',
+      highlights: [
+        'Delivered cross-platform apps with Expo, native navigation, and push notifications',
+        'Optimized list rendering and image caching for smooth performance on mid-range devices',
+        'Built real-time features including WebRTC huddles and live presence indicators',
+      ],
+      stack: ['React Native', 'Expo', 'Node.js', 'WebRTC', 'MongoDB'],
+      projects: [
+        {
+          title: 'Regroup',
+          description:
+            'Fitness community app — training logs, weekly challenges, leaderboards, and social activity feed.',
+        },
+        {
+          title: 'Orbit',
+          description:
+            'Remote workspace with spatial rooms, one-click audio huddles, and shared boards with cursor presence.',
+        },
+      ],
+    },
+  ],
+  projects: [
+    {
+      title: 'Zing HR',
+      company: 'Zing HR',
+      year: '2025',
+      description:
+        'Full-stack HR platform with web dashboard and React Native mobile app serving 12K+ active users.',
+      stack: ['React', 'React Native', 'Node.js', 'PostgreSQL', 'AWS'],
+    },
+    {
+      title: 'Autolex',
+      company: 'LexFlow Technologies',
+      year: '2024',
+      description:
+        'Legal case management SaaS used by 18 firms to manage 3.2K+ matters with automated deadline tracking.',
+      stack: ['React', 'Next.js', 'PostgreSQL', 'GraphQL'],
+    },
+    {
+      title: 'Regroup',
+      company: 'Fitness Community',
+      year: '2024',
+      description:
+        'Hybrid mobile app for athletes — 8.5K monthly active users, 120K posts, and live challenge leaderboards.',
+      stack: ['React Native', 'Expo', 'Node.js', 'TypeScript'],
+    },
+    {
+      title: 'Orbit',
+      company: 'Remote-First SaaS',
+      year: '2023',
+      description:
+        'Collaboration workspace with WebRTC audio huddles, live presence, and real-time shared boards.',
+      stack: ['React', 'Node.js', 'WebRTC'],
+    },
+  ],
+  skills: [
+    { category: 'Frontend', items: ['React', 'TypeScript', 'Next.js', 'Angular', 'HTML / CSS'] },
+    { category: 'Mobile', items: ['React Native', 'Expo', 'iOS & Android', 'Push Notifications'] },
+    { category: 'Backend', items: ['Node.js', 'PostgreSQL', 'REST & GraphQL', 'AWS'] },
+    { category: 'Tools', items: ['Git', 'Docker', 'CI/CD', 'Figma'] },
+  ],
+  education: [
+    {
+      school: 'University of Mumbai',
+      degree: 'B.E. Computer Engineering',
+      period: '2015 — 2019',
+    },
+  ],
+}
+
+export const notFound = {
+  headline: 'Page not found.',
+  subhead: 'The page you are looking for does not exist.',
+  backLabel: 'Back to home',
 }
 
 export const projects = [
@@ -128,7 +611,7 @@ export const projects = [
     image: '/projects/pulse.svg',
     layout: 'center',
     detail: {
-      client: 'Legal Tech Startup',
+      client: 'LexFlow Technologies',
       role: 'Frontend Lead',
       duration: '6 months',
       overview:

@@ -1,0 +1,17 @@
+.page-header {
+  margin-bottom: clamp(2.5rem, 6vw, 3.5rem);
+}
+
+.page-header--center {
+  text-align: center;
+}
+
+.page-header--left {
+  text-align: left;
+}
+
+.page-header--center .section__subhead {
+  max-width: 32rem;
+  margin-left: auto;
+  margin-right: auto;
+}

@@ -1,0 +1,12 @@
+.not-found {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - var(--nav-height));
+  padding: var(--spacing-section) 1.5rem;
+}
+
+.not-found__inner {
+  text-align: center;
+  max-width: var(--max-width);
+}

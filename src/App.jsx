@@ -6,6 +6,9 @@ import Footer from './components/Footer'
 import ScrollToHash from './components/ScrollToHash'
 import Home from './pages/Home'
 import ProjectDetail from './pages/ProjectDetail'
+import Workflow from './pages/Workflow'
+import Resume from './pages/Resume'
+import NotFound from './pages/NotFound'
 import './App.css'
 
 function App() {
@@ -22,6 +25,9 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/projects/:slug" element={<ProjectDetail />} />
+            <Route path="/workflow" element={<Workflow />} />
+            <Route path="/resume" element={<Resume />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
         <Footer />
