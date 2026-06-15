@@ -1,5 +1,5 @@
 .skills {
-  padding: var(--spacing-section) 1rem;
+  padding: var(--spacing-section) var(--page-gutter);
 }
 
 .skills__inner {

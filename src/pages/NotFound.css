@@ -3,7 +3,7 @@
   align-items: center;
   justify-content: center;
   min-height: calc(100vh - var(--nav-height));
-  padding: var(--spacing-section) 1.5rem;
+  padding: var(--spacing-section) var(--page-gutter);
 }
 
 .not-found__inner {

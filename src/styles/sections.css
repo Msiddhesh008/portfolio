@@ -3,7 +3,7 @@
 }
 
 .section {
-  padding: var(--spacing-section) 1.5rem;
+  padding: var(--spacing-section) var(--page-gutter);
 }
 
 .section__inner {

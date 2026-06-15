@@ -5,7 +5,7 @@
 .project-detail__hero {
   position: relative;
   text-align: center;
-  padding: 3.5rem 1.5rem 2rem;
+  padding: 3.5rem var(--page-gutter) 2rem;
   overflow: hidden;
 }
 
@@ -95,7 +95,7 @@
 .project-detail__body {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: var(--spacing-section) 1.5rem;
+  padding: var(--spacing-section) var(--page-gutter);
 }
 
 .project-detail__section {
@@ -140,7 +140,7 @@
 
 .project-detail__stat-value {
   display: block;
-  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  font-size: var(--text-title);
   font-weight: 600;
   letter-spacing: -0.03em;
   line-height: 1.1;
@@ -206,7 +206,7 @@
 
 .project-detail__cta {
   text-align: center;
-  padding: 3rem 1.5rem;
+  padding: 3rem var(--page-gutter);
   margin-bottom: 2rem;
   border-top: 1px solid var(--color-border);
   border-bottom: 1px solid var(--color-border);

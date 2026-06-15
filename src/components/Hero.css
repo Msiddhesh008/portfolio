@@ -7,7 +7,7 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: calc(var(--nav-height) + 3rem) 1.5rem 4rem;
+  padding: calc(var(--nav-height) + 3rem) var(--page-gutter) 4rem;
   overflow: hidden;
   isolation: isolate;
 }
@@ -514,14 +514,13 @@
 }
 
 @media (max-width: 768px) {
-  .hero {
-    padding-left: 3rem;
-    padding-right: 3rem;
+  .hero__content {
+    width: 100%;
+    max-width: 100%;
   }
 
-  .hero__content {
-    max-width: 18rem;
-    padding: 0 0.25rem;
+  .hero__title-layer {
+    white-space: normal;
   }
 
   .hero__blob--1 {

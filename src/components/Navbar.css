@@ -13,7 +13,7 @@
   z-index: 1;
   max-width: var(--max-width-wide);
   margin: 0 auto;
-  padding: 0 max(22px, env(safe-area-inset-right)) 0 max(22px, env(safe-area-inset-left));
+  padding: 0 var(--page-gutter);
   height: 100%;
   display: flex;
   align-items: center;

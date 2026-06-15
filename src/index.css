@@ -45,13 +45,18 @@
   --font-system: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text',
     'Helvetica Neue', Helvetica, Arial, sans-serif;
 
-  --text-hero: clamp(3rem, 8vw, 5.5rem);
-  --text-headline: clamp(2rem, 5vw, 3.5rem);
-  --text-title: clamp(1.5rem, 3vw, 2rem);
-  --text-subhead: 1.0625rem;
-  --text-body: 1.0625rem;
-  --text-caption: 0.75rem;
+  /* Apple.com type scale — 12px nav/footer, 14px body, restrained headlines */
+  --text-hero: clamp(2.5rem, 6vw, 3.5rem);
+  --text-headline: clamp(1.625rem, 3.5vw, 2.25rem);
+  --text-title: clamp(1.125rem, 2.2vw, 1.375rem);
+  --text-subhead: 0.9375rem;
+  --text-body: 0.8125rem;
+  --text-caption: 0.6875rem;
   --text-nav: 0.75rem;
+
+  --safe-left: env(safe-area-inset-left, 0px);
+  --safe-right: env(safe-area-inset-right, 0px);
+  --page-gutter: max(1.375rem, var(--safe-left), var(--safe-right));
 
   --spacing-section: clamp(6rem, 15vh, 10rem);
   --max-width: 980px;
@@ -120,6 +125,8 @@ html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: clip;
+  width: 100%;
 }
 
 html.nav-menu-open {
@@ -135,7 +142,9 @@ body {
   letter-spacing: -0.022em;
   color: var(--color-text);
   background-color: var(--color-bg);
-  overflow-x: hidden;
+  overflow-x: clip;
+  width: 100%;
+  min-height: 100%;
   transition: background-color 0.3s var(--ease-apple), color 0.3s var(--ease-apple);
 }
 

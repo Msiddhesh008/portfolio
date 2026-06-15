@@ -1,5 +1,5 @@
 .resume-page {
-  padding: clamp(2rem, 5vw, 3rem) 1rem var(--spacing-section);
+  padding: clamp(2rem, 5vw, 3rem) var(--page-gutter) var(--spacing-section);
   min-height: calc(100vh - var(--nav-height));
   background: var(--color-bg);
   position: relative;
@@ -61,11 +61,4 @@
 .resume-page__download:hover:not(:disabled) {
   opacity: 0.75;
   text-decoration: none;
-}
-
-@media (max-width: 820px) {
-  .resume-page {
-    padding-left: 0.75rem;
-    padding-right: 0.75rem;
-  }
 }
